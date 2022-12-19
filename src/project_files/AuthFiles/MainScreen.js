@@ -1,19 +1,14 @@
 import React from 'react'
 import './MainScreenStyle.css'
-import { Link } from 'react-router-dom'
-
 function MainScreen() {
     return (
         <div style={{ position: 'relative', height: '100vh', }}>
             <div className='authButtonContainer' >
                 <div style={{ display: 'block', position: 'relative', padding: 10 }}>
 
-                    <Link to={'login'}>
-                        <button className='authButtons loginBtn'>Login</button>
-                    </Link>
-                    <Link to={'register'}>
-                        <button className='authButtons registerBtn'>Register</button>
-                    </Link>
+                    <button className='authButtons loginBtn'>Login</button>
+
+                    <button className='authButtons registerBtn'>Register</button>
                 </div>
             </div >
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '100%', width: '100%' }}>

@@ -15,35 +15,13 @@ h1{
 }
 
 .authButtonContainer{
-    position: fixed;
-    /* padding: 10px; */
-    max-width: 400px;
-    width: 100%;
-    bottom: 0px;
-    left: 50%;
-    transform: translateX(-50%);
-   
-
-}
-
-.errorContainer{
     position: absolute;
     width: 100%;
-    bottom: 80px;
-    padding: 10px;
-}
+    bottom: 0;
 
-.errorText{
-
-    background-color: #EB5757;
-    color: white;
-    padding: 2em 1em;
-    font-size: 14px;
-    margin: 0px;
-    border-radius: 8px;
+  
 
 }
-
 
 .authButtons{
     /* display:block; */
@@ -60,22 +38,9 @@ h1{
 .loginBtn{
     background-color: #F2C94C;
     color: white;
-    margin-bottom: 10px;
 }
 
 .registerBtn{
     background-color: #2F80ED;
     color: white;
-}
-
-.heading{
-    font-size:14px;
-    font-weight: 700;
-    margin: 1em 0;
-}
-.subHeading{
-    font-size: 28px;
-    font-weight: 700;
-    width: 80%;
-    margin: 0;
 }
