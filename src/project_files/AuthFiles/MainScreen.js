@@ -8,7 +8,7 @@ function MainScreen() {
             <div className='authButtonContainer' >
                 <div style={{ display: 'block', position: 'relative', padding: 10 }}>
 
-                    <Link to={'GameScreen'}>
+                    <Link to={'login'}>
                         <button className='authButtons loginBtn'>Login</button>
                     </Link>
                     <Link to={'register'}>

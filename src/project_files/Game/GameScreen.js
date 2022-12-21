@@ -4,8 +4,9 @@ import { Link } from 'react-router-dom'
 
 function GameScreen() {
     return (
-        <div style={{ position: 'relative',
-            height: '100vh',
+        <div style={{
+            position: 'relative',
+            height: '100%',
             // border: '1px solid black',
             alignItems: 'center',
             justifyContent: 'center',

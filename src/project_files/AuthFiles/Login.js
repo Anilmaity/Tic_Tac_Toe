@@ -2,13 +2,14 @@ import React, { useState } from 'react'
 import './Login.css'
 import { Link } from 'react-router-dom'
 import InputField from './InputField'
-
+import { useNavigate } from 'react-router-dom'
 
 function Login() {
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
     const [showError, setShowError] = useState(false)
 
+    const navigate = useNavigate()
 
     const handleUsername = (e) => {
         setUsername(e.target.value)
@@ -22,6 +23,7 @@ function Login() {
         e.preventDefault()
         if (username === 'darshan' && password === '1234') {
             console.log(username, password)
+            navigate('/GameScreen')
         }
         else {
             console.log(username, password)
