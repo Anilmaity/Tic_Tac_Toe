@@ -2,14 +2,20 @@ import React from 'react'
 import Login from './AuthFiles/Login'
 import MainScreen from './AuthFiles/MainScreen'
 import { Routes, Route } from "react-router-dom"
-import Register from './AuthFiles/Register'
+import GameScreen from "./Game/GameScreen";
+import Invite from "./Game/Invite";
+import Game from "./Game/Game";
 function Base() {
     return (
-        <div style={{ maxWidth: 400, margin: '0 auto', height: '100%' }}>
+        <div style={{ maxWidth: 400, margin: '0 auto', }}>
             <Routes>
                 <Route path='/' element={<MainScreen />} />
-                <Route path='login' element={<Login />} />
-                <Route path='register' element={<Register />} />
+                <Route path='register' element={<Login />} />
+
+                <Route path='GameScreen' element={<GameScreen />} />
+                <Route path='Invite' element={<Invite />} />
+                <Route path='Game' element={<Game />} />
+
 
             </Routes>
         </div>
