@@ -38,9 +38,22 @@ h1{
 .loginBtn{
     background-color: #F2C94C;
     color: white;
+    margin-bottom: 10px;
 }
 
 .registerBtn{
     background-color: #2F80ED;
     color: white;
+}
+
+.heading{
+    font-size:14px;
+    font-weight: 700;
+    margin: 1em 0;
+}
+.subHeading{
+    font-size: 28px;
+    font-weight: 700;
+    width: 80%;
+    margin: 0;
 }
