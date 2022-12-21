@@ -15,13 +15,35 @@ h1{
 }
 
 .authButtonContainer{
-    position: absolute;
+    position: fixed;
+    /* padding: 10px; */
+    max-width: 400px;
     width: 100%;
-    bottom: 0;
-
-  
+    bottom: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+   
 
 }
+
+.errorContainer{
+    position: absolute;
+    width: 100%;
+    bottom: 80px;
+    padding: 10px;
+}
+
+.errorText{
+
+    background-color: #EB5757;
+    color: white;
+    padding: 2em 1em;
+    font-size: 14px;
+    margin: 0px;
+    border-radius: 8px;
+
+}
+
 
 .authButtons{
     /* display:block; */
