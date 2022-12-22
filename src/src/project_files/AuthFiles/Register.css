@@ -1,0 +1,105 @@
+h1{
+    font-family: 'Bilbo', cursive;
+    text-align:  center;
+    font-size: 36px;
+    margin: 0;
+}
+
+.mainHeading{
+    font-size: 96px;
+    width: 50%;
+    /* line-height: 1em; */
+    margin: 0 auto;
+    margin-top: 0.2em;
+    
+}
+
+.authButtonContainer{
+    position: fixed;
+    /* padding: 10px; */
+    max-width: 400px;
+    width: 100%;
+    bottom: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+   
+    
+
+}
+
+.errorContainer{
+    position: fixed;
+    width: 100%;
+        max-width: 400px;
+    bottom: 80px;
+    padding: 10px;
+        left: 50%;
+    transform: translateX(-50%);
+}
+
+.errorText{
+
+    background-color: #EB5757;
+    color: white;
+    padding: 2em 1em;
+    font-size: 14px;
+    margin: 0px;
+    border-radius: 8px;
+
+}
+.successContainer{
+    position: fixed;
+    width: 100%;
+        max-width: 400px;
+    bottom: 80px;
+    padding: 10px;
+        left: 50%;
+    transform: translateX(-50%);
+}
+
+.successText{
+
+    background-color: #6FCF97;
+    color: white;
+    padding: 2em 1em;
+    font-size: 14px;
+    margin: 0px;
+    border-radius: 8px;
+
+}
+
+
+.authButtons{
+    /* display:block; */
+    width: 100%;
+    padding: 1.5em;
+    margin-top: 24px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 700;
+ 
+}
+
+.loginBtn{
+    background-color: #F2C94C;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.registerBtn{
+    background-color: #2F80ED;
+    color: white;
+}
+
+.heading{
+    font-size:14px;
+    font-weight: 700;
+    margin: 1em 0;
+}
+.subHeading{
+    font-size: 28px;
+    font-weight: 700;
+    width: 80%;
+    margin: 0;
+}

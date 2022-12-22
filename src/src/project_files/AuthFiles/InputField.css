@@ -1,0 +1,14 @@
+.title{
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.inputField{
+    border: none;
+    background-color: #F4F4F4;
+    padding: 1.5em 1em;
+    border-radius: 8px;
+    width: 100%;
+    font-size: 14px;
+}
+
