@@ -16,7 +16,7 @@ function Base() {
 
                 <Route path='GameScreen' element={<GameScreen />} />
                 <Route path='Invite' element={<Invite />} />
-                <Route path='Game/:id' element={<Game />} />
+                <Route path='Game/:gameid' element={<Game />} />
 
 
             </Routes>

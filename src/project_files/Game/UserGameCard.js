@@ -20,7 +20,7 @@ function UserGameCard({item,id,name}) {
 
             }
             <p className='timeStamp'>{moment(item.startTime).format("Do MMM  YY, h:mm a")}</p>
-            <Link to={`/game/${item.id}`}>
+            <Link to={`/Game/${item.id}`}>
             <button
 
             >{item.gameOver ? "View Game":item.currentPlayer == id ?"Play!":"View Game"} </button>

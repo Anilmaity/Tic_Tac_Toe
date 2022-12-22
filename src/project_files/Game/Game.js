@@ -1,18 +1,18 @@
 import React, {useEffect, useState} from 'react'
 
-import {useParams} from 'react-router';
+// import {} from 'react-router';
 import {gql} from "@apollo/client";
 import {client} from "../Client";
 
-import {Link, useNavigate} from 'react-router-dom'
+import {Link,useParams, useNavigate} from 'react-router-dom'
 
 const cross = require('../../assets/images/cross.png')
 const circle = require('../../assets/images/circle.png')
 const nothing = require('../../assets/images/nothing.png')
 
-function Invite() {
-    const {id} = useParams();
-    console.log(id)
+function Game() {
+    const {gameid} = useParams();
+    console.log(gameid)
     const [username, setusername] = useState(localStorage.getItem('user'))
     const [name, setname] = useState("")
     const [userid, setuserid] = useState([])
@@ -68,7 +68,7 @@ function Invite() {
         const getgame = gql`
 
             query{
-                GetGamebyId(id:${id})
+                GetGamebyId(id:${gameid})
                 {
                     startTime
                     tictactoe
@@ -160,7 +160,7 @@ function Invite() {
         const updategame = gql`
             mutation{
                 updateGame(
-                    gameid:${id}
+                    gameid:${gameid}
                     player:${userid}
                     position:${pos}
 
@@ -170,7 +170,7 @@ function Invite() {
                         tictactoe
                         gameState
                         currentPlayer
-                        
+
                     }
                     message
                 }
@@ -180,10 +180,10 @@ function Invite() {
             mutation: updategame,
             fetchPolicy: 'no-cache'
         }).then((data) => {
-            console.log("response", data)
+                console.log("response", data)
                 getGame(userid)
 
-        }
+            }
         ).catch((err) => {
             console.log(err)
 
@@ -411,4 +411,4 @@ function Invite() {
     )
 }
 
-export default Invite
+export default Game
