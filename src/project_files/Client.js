@@ -14,8 +14,8 @@ import { setContext } from '@apollo/client/link/context';
 
 const httpLink = createHttpLink({
     // uri: "https://jegnus.com/graphql",
-    // uri: "https://tictactoe-z3ih4o4xwq-el.a.run.app/graphql",
-    uri: "http://127.0.0.1:8000/graphql",
+    uri: "https://tictactoe-z3ih4o4xwq-el.a.run.app/graphql",
+    // uri: "http://127.0.0.1:8000/graphql",
 
 });
 
