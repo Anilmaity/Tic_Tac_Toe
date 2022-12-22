@@ -4,7 +4,7 @@ import {useParams} from 'react-router';
 import {gql} from "@apollo/client";
 import {client} from "../Client";
 
-import {Link} from 'react-router-dom'
+import {Link, useNavigate} from 'react-router-dom'
 
 const cross = require('../../assets/images/cross.png')
 const circle = require('../../assets/images/circle.png')
@@ -20,6 +20,7 @@ function Invite() {
     const [gameover, setgameover] = useState(false)
     const [msg, setmsg] = useState('move')
     const [winner, setwinner] = useState(true)
+    const navigate = useNavigate()
 
 
 
@@ -209,18 +210,25 @@ function Invite() {
                         style={{
                             width: '100%',
                             // border: '1px solid black',
-                            opacity: move? 1:0.5,
+                            opacity: 1,
+                            backgroundColor: gameover ?'#F2C94C' :move? '#F2C94C':'#E0E0E0',
                         }}
                         onClick={() => {
-                            if (edit === false) {
-                                alert("Please select a position")
+                            if (gameover) {
+                                navigate('/Invite')
                             } else {
-                                if(move) {
-                                    sunbmit()
+                                if (edit === false) {
+                                    alert("Please select a position")
+                                } else {
+                                    if (move) {
+                                        sunbmit()
+                                    }
                                 }
+
                             }
-                        }}
-                        className='authButtons loginBtn'>Submit!
+                        }
+                        }
+                        className='authButtons loginBtn'>{gameover ?"Start another game" : move ? "Submit!": "Waiting for "+playername}
                     </button>
 
                 </div>
@@ -290,13 +298,16 @@ function Invite() {
                                 fontSize: 20,
                                 // border: '1px solid black',
                                 width: "100%",
-                                height: 20,
+                                height: 55,
                                 textAlign: 'center',
                                 padding: 20,
                                 color: '#333333',
                                 fontWeight: 500,
                                 marginBottom: 0,
                                 backgroundColor: '#FFE79E',
+                                verticalAlign: 'middle',
+
+
 
                             }}>
                             {gameover ? msg == "Draw" ? "Draw" : winner ? "You " + msg : "Their "+msg : move ? "Your " + msg:"Their "+msg }</h2>

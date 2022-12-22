@@ -45,6 +45,8 @@ function GameScreen() {
             console.log(data)
             setid(data.data.GetGameUserbyusername.id)
             setname(data.data.GetGameUserbyusername.name)
+            let game = data.data.GetGameUserbyusername.Games
+            // filter out games by id
             setPlayersList(data.data.GetGameUserbyusername.Games)
         }).catch((err) => {
             console.log(err)

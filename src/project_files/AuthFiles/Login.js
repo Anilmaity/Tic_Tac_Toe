@@ -126,7 +126,7 @@ function Login() {
                     </Link>
 
                     <div style={{ marginTop: 20 }}>
-                        <h2 className='heading'>Create account</h2>
+                        <h2 className='heading'>Login</h2>
                         <p className='subHeading'>Please enter your
                             details</p>
                     </div>

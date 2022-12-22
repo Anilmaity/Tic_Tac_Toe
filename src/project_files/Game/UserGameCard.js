@@ -23,7 +23,7 @@ function UserGameCard({item,id,name}) {
             <Link to={`/game/${item.id}`}>
             <button
 
-            >Play!</button>
+            >{item.gameOver ? "View Game":item.currentPlayer == id ?"Play!":"View Game"} </button>
             </Link>
         </div>
     )
