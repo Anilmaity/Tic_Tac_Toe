@@ -15,6 +15,7 @@
 }
 .cardContainer .timeStamp{
     font-size: 12px;
+    margin: 2em 0;
 }
 
 .cardContainer button{

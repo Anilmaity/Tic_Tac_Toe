@@ -84,7 +84,9 @@ function GameScreen() {
                                     color: 'white',
                                     bottom: 10,
                                     right: 10,
-                                    borderRadius: 8
+                                    borderRadius: 8,
+                                    boxShadow: '2px 2px 16px rgba(0, 0, 0, 0.16)'
+
                                 }}>
                                     <div style={{
                                         display: 'flex',
