@@ -1,16 +1,16 @@
 import React, {useEffect, useState} from 'react'
 
-import {useParams} from 'react-router';
+// import {} from 'react-router';
 import {gql} from "@apollo/client";
 import {client} from "../Client";
 
-import {Link, useNavigate} from 'react-router-dom'
+import {Link,useParams, useNavigate} from 'react-router-dom'
 
 const cross = require('../../assets/images/cross.png')
 const circle = require('../../assets/images/circle.png')
 const nothing = require('../../assets/images/nothing.png')
 
-function Invite() {
+function Game() {
     const {id} = useParams();
     console.log(id)
     const [username, setusername] = useState(localStorage.getItem('user'))
@@ -411,4 +411,4 @@ function Invite() {
     )
 }
 
-export default Invite
+export default Game
