@@ -53,18 +53,8 @@ function Register() {
         console.log(data)
         if (data.CreateUser.user) {
             setShowSuccess(true)
-        }
-        else {
-            setShowError(true)
-        }
-    }
 
-    const handleRegister = (e) => {
-        e.preventDefault()
-        if (username === 'darshan' && password === '1234') {
-            console.log(username, password)
-        }
-        else {
+        } else {
             console.log(username, password)
             setShowError(true)
             const errorPopupTimer = setTimeout(() => {
@@ -73,6 +63,13 @@ function Register() {
             }, 2000);
             // clearTimeout(errorPopupTimer)
         }
+    }
+
+    const handleRegister = (e) => {
+        e.preventDefault()
+
+        userRegister(name, username, password, email)
+
     }
 
 

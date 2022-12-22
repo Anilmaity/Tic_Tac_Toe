@@ -14,14 +14,16 @@ import { setContext } from '@apollo/client/link/context';
 
 const httpLink = createHttpLink({
     // uri: "https://jegnus.com/graphql",
-    uri: "https://tictactoe-z3ih4o4xwq-el.a.run.app/graphql",
+    // uri: "https://tictactoe-z3ih4o4xwq-el.a.run.app/graphql",
+    uri: "http://127.0.0.1:8000/graphql",
 
 });
 
 const authLink = setContext ( (_, { headers }) => {
     // get the authentication token from local storage if it exists
-    const userToken =  localStorage.getItem("token");
-    //console.log("client",userToken);
+    // const userToken =  localStorage.getItem("token");
+    const userToken =  "";
+    console.log("client",userToken);
     // return the headers to the context so httpLink can read them
     return {
         headers: {

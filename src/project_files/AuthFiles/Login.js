@@ -46,40 +46,48 @@ function Login() {
             }
 
         `
-        const { data } = await client.mutate({
-            mutation: getusertoken
-        })
-        console.log(data)
-        if (data.tokenAuth.success) {
-            localStorage.setItem('token', data.tokenAuth.token);
-            localStorage.setItem('user', data.tokenAuth.user.username);
-            localStorage.setItem('email', data.tokenAuth.user.email);
+        client.mutate({
+            mutation: getusertoken,
+            fetchPolicy: 'no-cache'
+        }).then((data) => {
+            console.log(data.data.tokenAuth.success)
+            console.log(data.data.tokenAuth.user)
+            if (data.data.tokenAuth.success) {
+                localStorage.setItem('user', username);
+                localStorage.setItem('email', JSON.stringify(data.data.tokenAuth.user.email));
+                localStorage.setItem("token", JSON.stringify(data.data.tokenAuth.token));
 
-        }
-        else {
-            alert("Invalid username or password")
-        }
+                navigate('/GameScreen')
+
+            }
+            else {
+                console.log(username, password)
+                setShowError(true)
+                const errorPopupTimer = setTimeout(() => {
+                    setShowError(false)
+                    clearTimeout(errorPopupTimer)
+                }, 2000)
+                alert("Invalid username or password")
+            }
+        }).catch((err) => {
+            console.log(err)
+            console.log(username, password)
+            setShowError(true)
+            const errorPopupTimer = setTimeout(() => {
+                setShowError(false)
+                clearTimeout(errorPopupTimer)
+            }, 2000)
+            // alert("Error in login")
+
+        })
 
     }
 
 
     const handleLogin = (e) => {
         e.preventDefault()
-        // let res = userlogin(username, password)
-        let res = true
-        if (res === true) {
-            console.log(username, password)
-            navigate('/GameScreen')
-        }
-        else {
-            console.log(username, password)
-            setShowError(true)
-            const errorPopupTimer = setTimeout(() => {
-                setShowError(false)
-                clearTimeout(errorPopupTimer)
-            }, 2000);
-            // clearTimeout(errorPopupTimer)
-        }
+        userlogin(username, password)
+
     }
     return (
         <div style={{ position: 'relative', height: '100vh', width: '100%' }}>
