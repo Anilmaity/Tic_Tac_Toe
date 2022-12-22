@@ -4,6 +4,9 @@ import { Link } from 'react-router-dom'
 import InputField from './InputField'
 import { useNavigate } from 'react-router-dom'
 
+import { gql } from "@apollo/client";
+import {client} from "../Client";
+
 function Login() {
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
@@ -18,12 +21,54 @@ function Login() {
         setPassword(e.target.value)
     }
 
+    const userlogin = async (username, password) => {
+        console.log(username, password)
+
+
+        const getusertoken = gql`
+            mutation{
+                tokenAuth(
+                    username:"${username}",
+                    password:"${password}"
+
+                )
+
+                {
+                    success
+                    token
+                    refreshToken
+                    user{
+                        email
+                        username
+                    }
+                }
+
+            }
+
+        `
+        const { data } = await client.mutate({
+            mutation: getusertoken
+        })
+        console.log(data)
+        if (data.tokenAuth.success) {
+            localStorage.setItem('token', data.tokenAuth.token);
+            localStorage.setItem('user', data.tokenAuth.user.username);
+            localStorage.setItem('email', data.tokenAuth.user.email);
+
+        }
+        else {
+            alert("Invalid username or password")
+        }
+
+    }
+
 
     const handleLogin = (e) => {
         e.preventDefault()
-        if (username === 'darshan' && password === '1234') {
+        let res = userlogin(username, password)
+
+        if (res === true) {
             console.log(username, password)
-            navigate('/GameScreen')
         }
         else {
             console.log(username, password)

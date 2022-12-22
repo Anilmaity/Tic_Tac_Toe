@@ -2,8 +2,8 @@ import React, { useState } from 'react'
 import InputField from './InputField'
 import { Link } from 'react-router-dom'
 import './Register.css'
-
-
+import { gql } from '@apollo/client'
+import { client} from "../Client";
 
 
 function Register() {
@@ -27,6 +27,37 @@ function Register() {
         setEmail(e.target.value)
     }
 
+    const userRegister = async (name, username, password, email) => {
+        console.log(name, username, password, email)
+        const registerUser = gql`
+            mutation{
+                CreateUser(
+                    username:"${username}",
+                    password:"${password}",
+                    email:"${email}",
+                    name:"${name}"
+                )
+                {
+                    user{
+                        id
+                        username
+                        email
+                        name
+                    }
+                }
+            }
+        `
+        const { data } = await client.mutate({
+            mutation: registerUser
+        })
+        console.log(data)
+        if (data.CreateUser.user) {
+            setShowSuccess(true)
+        }
+        else {
+            setShowError(true)
+        }
+    }
 
     const handleRegister = (e) => {
         e.preventDefault()
