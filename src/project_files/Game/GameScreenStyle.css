@@ -16,11 +16,15 @@ h1{
 }
 
 .authButtonContainer{
-    position: absolute;
+    position: fixed;
+    /* padding: 10px; */
+    max-width: 400px;
     width: 100%;
-    bottom: 0;
-
-
+    bottom: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0.5em;
+   
 
 }
 

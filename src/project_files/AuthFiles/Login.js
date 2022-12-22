@@ -5,7 +5,7 @@ import InputField from './InputField'
 import { useNavigate } from 'react-router-dom'
 
 import { gql } from "@apollo/client";
-import {client} from "../Client";
+import { client } from "../Client";
 
 function Login() {
     const [username, setUsername] = useState('')
@@ -65,10 +65,11 @@ function Login() {
 
     const handleLogin = (e) => {
         e.preventDefault()
-        let res = userlogin(username, password)
-
+        // let res = userlogin(username, password)
+        let res = true
         if (res === true) {
             console.log(username, password)
+            navigate('/GameScreen')
         }
         else {
             console.log(username, password)
